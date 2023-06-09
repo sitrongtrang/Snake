@@ -24,7 +24,7 @@ public:
     void playGame();
     void resetGame();
     void runGame();
-    //~Game();
+    ~Game();
 };
 
 #endif

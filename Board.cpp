@@ -49,6 +49,10 @@ void Board::drawBoard(int width, int height){
     }
 }
 
+Board::~Board(){
+    this->width = this->height = this->columns = this->rows = 0;
+}
+
 Point::Point(int x, int y){
     this->x = x;
     this->y = y;
@@ -57,12 +61,10 @@ Point::Point(int x, int y){
 
 void Point::setX(int x){
     this->x = x;
-    //this->x %= width;
 }
 
 void Point::setY(int y){
     this->y = y;
-    //this->y %= height;
 }
 
 int Point::getX(){

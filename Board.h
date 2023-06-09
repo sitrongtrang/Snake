@@ -15,6 +15,7 @@ public:
     int getHeight();
     int getCols();
     int getRows();
+    ~Board();
 };
 
 class Point{

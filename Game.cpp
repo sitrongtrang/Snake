@@ -79,14 +79,10 @@ void Game::startGame(){
 
 void Game::playGame(){
     srand(time(NULL)); 
-    //int turn = 0;
     system("cls");
     this->board->drawBoard(20, 20);
     this->resetLocation();
     while(true) {
-        //this->snake->eraseSnake();
-        //turn++;
-        //if(turn % 10 == 0) this->snake->setScore(this->snake->getScore()+1);
         if(kbhit()) {
             char c = getch();
             if(c == 32) {
@@ -162,4 +158,14 @@ void Game::runGame(){
             }
         }
     }
+}
+
+Game::~Game(){
+    delete this->snake;
+    if (this->food) delete this->food;
+    for (int i = 0; i < this->board->getRows(); i++){
+        delete [] this->location[i];
+    }
+    delete [] this->location;
+    delete this->board;
 }
